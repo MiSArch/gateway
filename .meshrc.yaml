@@ -1,0 +1,26 @@
+serve:
+  hostname: 0.0.0.0
+  port: 8080
+  playground: true
+sources:
+  - name: catalog
+    handler:
+      graphql:
+        endpoint: "{env.CATALOG_ENDPOINT}"
+        source: schemas/catalog.graphql
+        operationHeaders:
+          traceparent: "{context.headers['traceparent']}"
+          tracestate: "{context.headers['tracestate']}"
+  - name: wishlist
+    handler:
+      graphql:
+        endpoint: "{env.WISHLIST_ENDPOINT}"
+        source: schemas/wishlist.graphql
+        operationHeaders:
+          traceparent: "{context.headers['traceparent']}"
+          tracestate: "{context.headers['tracestate']}"
+transforms:
+  - filterSchema:
+      filters:
+        - Query.!_service
+        - Query.!_entities

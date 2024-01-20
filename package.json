@@ -1,0 +1,19 @@
+{
+  "name": "gateway",
+  "version": "1.0.0",
+  "description": "The GraphQL gateway",
+  "main": "index.js",
+  "scripts": {
+    "start": "mesh start",
+    "dev": "mesh dev",
+    "build": "mesh build"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@graphql-mesh/cli": "^0.88.5",
+    "@graphql-mesh/graphql": "^0.96.3",
+    "@graphql-mesh/transform-filter-schema": "^0.96.3",
+    "graphql": "^16.8.1"
+  }
+}
