@@ -19,6 +19,14 @@ sources:
         operationHeaders:
           traceparent: "{context.headers['traceparent']}"
           tracestate: "{context.headers['tracestate']}"
+  - name: inventory
+    handler:
+      graphql:
+        endpoint: "{env.INVENTORY_ENDPOINT}"
+        source: schemas/inventory.graphql
+        operationHeaders:
+          traceparent: "{context.headers['traceparent']}"
+          tracestate: "{context.headers['tracestate']}"
 transforms:
   - filterSchema:
       filters:
