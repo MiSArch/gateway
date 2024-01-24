@@ -43,6 +43,14 @@ sources:
         operationHeaders:
           traceparent: "{context.headers['traceparent']}"
           tracestate: "{context.headers['tracestate']}"
+  - name: user
+    handler:
+      graphql:
+        endpoint: "{env.USER_ENDPOINT}"
+        source: schemas/user.graphql
+        operationHeaders:
+          traceparent: "{context.headers['traceparent']}"
+          tracestate: "{context.headers['tracestate']}"
 transforms:
   - filterSchema:
       filters:
