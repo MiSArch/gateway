@@ -27,6 +27,14 @@ sources:
         operationHeaders:
           traceparent: "{context.headers['traceparent']}"
           tracestate: "{context.headers['tracestate']}"
+  - name: notification
+    handler:
+      graphql:
+        endpoint: "{env.NOTIFICATION_ENDPOINT}"
+        source: schemas/notification.graphql
+        operationHeaders:
+          traceparent: "{context.headers['traceparent']}"
+          tracestate: "{context.headers['tracestate']}"
 transforms:
   - filterSchema:
       filters:
