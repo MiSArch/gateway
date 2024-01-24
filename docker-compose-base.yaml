@@ -9,6 +9,7 @@ services:
       - WISHLIST_ENDPOINT=http://localhost:3500/v1.0/invoke/wishlist/method/
       - INVENTORY_ENDPOINT=http://localhost:3500/v1.0/invoke/inventory/method/graphql
       - NOTIFICATION_ENDPOINT=http://localhost:3500/v1.0/invoke/notification/method/graphql
+      - SHOPPINGCART_ENDPOINT=http://localhost:3500/v1.0/invoke/shoppingcart/method/
     healthcheck:
       test: wget http://localhost:8080/graphql || exit 1
       interval: 1s

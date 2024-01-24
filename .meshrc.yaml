@@ -35,6 +35,14 @@ sources:
         operationHeaders:
           traceparent: "{context.headers['traceparent']}"
           tracestate: "{context.headers['tracestate']}"
+  - name: shoppingcart
+    handler:
+      graphql:
+        endpoint: "{env.SHOPPINGCART_ENDPOINT}"
+        source: schemas/shoppingcart.graphql
+        operationHeaders:
+          traceparent: "{context.headers['traceparent']}"
+          tracestate: "{context.headers['tracestate']}"
 transforms:
   - filterSchema:
       filters:
