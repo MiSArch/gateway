@@ -1,0 +1,26 @@
+federation_version: =2.5.0
+subgraphs:
+  catalog:
+    routing_url: http://localhost:3500/v1.0/invoke/catalog/method/graphql
+    schema:
+      file: ./schemas/catalog.graphql
+  notification:
+    routing_url: http://localhost:3500/v1.0/invoke/notification/method/graphql
+    schema:
+      file: ./schemas/notification.graphql
+  user:
+    routing_url: http://localhost:3500/v1.0/invoke/user/method/graphql
+    schema:
+      file: ./schemas/user.graphql
+  wishlist:
+    routing_url: http://localhost:3500/v1.0/invoke/wishlist/method/
+    schema:
+      file: ./schemas/wishlist.graphql
+  shoppingcart:
+    routing_url: http://localhost:3500/v1.0/invoke/shoppingcart/method/
+    schema:
+      file: ./schemas/shoppingcart.graphql
+  inventory:
+    routing_url: http://localhost:3500/v1.0/invoke/inventory/method/graphql
+    schema:
+      file: ./schemas/inventory.graphql
