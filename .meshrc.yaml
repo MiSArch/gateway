@@ -3,56 +3,10 @@ serve:
   port: 8080
   playground: true
 sources:
-  - name: catalog
+  - name: Supergraph
     handler:
-      graphql:
-        endpoint: "{env.CATALOG_ENDPOINT}"
-        source: schemas/catalog.graphql
+      supergraph:
+        source: supergraph.graphql
         operationHeaders:
           traceparent: "{context.headers['traceparent']}"
           tracestate: "{context.headers['tracestate']}"
-  - name: wishlist
-    handler:
-      graphql:
-        endpoint: "{env.WISHLIST_ENDPOINT}"
-        source: schemas/wishlist.graphql
-        operationHeaders:
-          traceparent: "{context.headers['traceparent']}"
-          tracestate: "{context.headers['tracestate']}"
-  - name: inventory
-    handler:
-      graphql:
-        endpoint: "{env.INVENTORY_ENDPOINT}"
-        source: schemas/inventory.graphql
-        operationHeaders:
-          traceparent: "{context.headers['traceparent']}"
-          tracestate: "{context.headers['tracestate']}"
-  - name: notification
-    handler:
-      graphql:
-        endpoint: "{env.NOTIFICATION_ENDPOINT}"
-        source: schemas/notification.graphql
-        operationHeaders:
-          traceparent: "{context.headers['traceparent']}"
-          tracestate: "{context.headers['tracestate']}"
-  - name: shoppingcart
-    handler:
-      graphql:
-        endpoint: "{env.SHOPPINGCART_ENDPOINT}"
-        source: schemas/shoppingcart.graphql
-        operationHeaders:
-          traceparent: "{context.headers['traceparent']}"
-          tracestate: "{context.headers['tracestate']}"
-  - name: user
-    handler:
-      graphql:
-        endpoint: "{env.USER_ENDPOINT}"
-        source: schemas/user.graphql
-        operationHeaders:
-          traceparent: "{context.headers['traceparent']}"
-          tracestate: "{context.headers['tracestate']}"
-transforms:
-  - filterSchema:
-      filters:
-        - Query.!_service
-        - Query.!_entities
