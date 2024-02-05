@@ -24,3 +24,7 @@ subgraphs:
     routing_url: http://localhost:3500/v1.0/invoke/inventory/method/graphql
     schema:
       file: ./schemas/inventory.graphql
+  tax:
+    routing_url: http://localhost:3500/v1.0/invoke/tax/method/graphql
+    schema:
+      file: ./schemas/tax.graphql
