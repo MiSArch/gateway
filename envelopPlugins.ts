@@ -36,7 +36,7 @@ async function resolveUserAuthenticated(
     }
     let parsedHeader: string;
     if (authHeader.startsWith("Bearer ")) {
-      parsedHeader = authHeader.substring(7);
+      parsedHeader = authHeader.substring("Bearer ".length());
     } else {
       parsedHeader = authHeader;
     }
