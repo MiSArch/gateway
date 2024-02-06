@@ -46,7 +46,7 @@ async function resolveUserAuthenticated(
       roles: getValidRoles(payload),
     };
     context.authHeader = parsedHeader;
-    context.parsedUser = JSON.stringify(user);
+    context.authorizedUser = JSON.stringify(user);
     return user;
   } catch (e) {
     return null;
