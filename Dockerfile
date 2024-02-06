@@ -19,4 +19,5 @@ COPY --from=0 /home/node/package.json ./package.json
 COPY --from=0 /home/node/package-lock.json ./package-lock.json
 COPY --from=0 /home/node/supergraph.yaml ./supergraph.yaml
 COPY --from=0 /home/node/supergraph.graphql ./supergraph.graphql
+COPY --from=0 /home/node/envelopPlugins.ts ./envelopPlugins.ts
 CMD ["npm", "start"]
