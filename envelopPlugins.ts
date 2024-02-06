@@ -38,14 +38,14 @@ async function resolveUserAuthenticated(
     if (authHeader.startsWith("Bearer ")) {
       parsedHeader = authHeader.substring(7);
     } else {
-      parsedHeader = authHeader;
+      throw new Error("Invalid authorization header, must have the format 'Bearer {token}'");
     }
     const { payload } = await jose.jwtVerify(parsedHeader, JWKS, {});
     const user: UserType = {
       id: payload.sub!,
       roles: getValidRoles(payload),
     };
-    context.authHeader = parsedHeader;
+    context.authHeader = authHeader;
     context.authorizedUser = JSON.stringify(user);
     return user;
   } catch (e) {
