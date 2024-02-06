@@ -10,3 +10,6 @@ sources:
         operationHeaders:
           traceparent: "{context.headers['traceparent']}"
           tracestate: "{context.headers['tracestate']}"
+          Authorization: "{context.authHeader}"
+          User: "{context.}"
+additionalEnvelopPlugins: "./envelopPlugins"
