@@ -28,7 +28,7 @@ jobs:
         run: cp supergraph.graphql docs/supergraph.graphql
       - uses: peter-evans/create-pull-request@v5
         with:
-          path: /.docs
+          path: ./docs
           commit-message: Update supergraph GraphQL schema
           branch: update/supergraph_graphql
           token: ${{ secrets.DOCS_PUSH_SECRET  }}
