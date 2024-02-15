@@ -1,0 +1,38 @@
+name: Update the supergraph GraphQL schema in docs
+
+on: push
+#  push:
+#    branches:
+#      - main
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  schema:
+    name: Update the supergraph GraphQL schema in docs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+      - uses: actions/checkout@v4
+        with:
+          repository: "misarch/docs"
+          path: "docs"
+      - name: Install Rover CLI
+        run: RUN curl -sSL https://rover.apollo.dev/nix/v0.22.0 | sh
+      - name: Generate supergraph.graphql
+        run: ~/.rover/bin/rover supergraph compose --config ./supergraph.yaml --output ./supergraph.graphql --elv2-license accept
+      - name: Copy supergraph.graphql
+        run: cp supergraph.graphql docs/supergraph.graphql
+      - uses: peter-evans/create-pull-request@v5
+        with:
+          path: /.docs
+          commit-message: Update supergraph GraphQL schema
+          branch: update/supergraph_graphql
+          token: ${{ secrets.DOCS_PUSH_SECRET  }}
+#      - name: Set to auto merge
+#        run: gh pr merge update/supergraph_graphql --auto --merge -R misarch/docs
+#        env:
+#          GH_TOKEN: ${{ secrets.DOCS_PUSH_SECRET  }}
