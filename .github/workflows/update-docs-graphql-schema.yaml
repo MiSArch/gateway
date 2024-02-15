@@ -21,7 +21,7 @@ jobs:
           repository: "misarch/docs"
           path: "docs"
       - name: Install Rover CLI
-        run: RUN curl -sSL https://rover.apollo.dev/nix/v0.22.0 | sh
+        run: curl -sSL https://rover.apollo.dev/nix/v0.22.0 | sh
       - name: Generate supergraph.graphql
         run: ~/.rover/bin/rover supergraph compose --config ./supergraph.yaml --output ./supergraph.graphql --elv2-license accept
       - name: Copy supergraph.graphql
