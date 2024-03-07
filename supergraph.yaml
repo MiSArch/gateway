@@ -36,3 +36,7 @@ subgraphs:
     routing_url: http://localhost:3500/v1.0/invoke/address/method/graphql
     schema:
       file: ./schemas/address.graphql
+  discount:
+    routing_url: http://localhost:3500/v1.0/invoke/discount/method/graphql
+    schema:
+      file: ./schemas/discount.graphql
