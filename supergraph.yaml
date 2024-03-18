@@ -44,3 +44,7 @@ subgraphs:
     routing_url: http://localhost:3500/v1.0/invoke/shipment/method/graphql
     schema:
       file: ./schemas/shipment.graphql
+  return:
+    routing_url: http://localhost:3500/v1.0/invoke/return/method/graphql
+    schema:
+      file: ./schemas/return.graphql
