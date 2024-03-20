@@ -10,6 +10,8 @@ services:
       timeout: 10s
       retries: 20
       start_period: 3s
+    environment:
+      - FORK=8
   gateway-dapr:
     image: "daprio/daprd:edge"
     command: [
