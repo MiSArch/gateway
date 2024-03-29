@@ -52,3 +52,7 @@ subgraphs:
     routing_url: http://localhost:3500/v1.0/invoke/payment/method/graphql
     schema:
       file: ./schemas/payment.graphql
+  order:
+    routing_url: http://localhost:3500/v1.0/invoke/order/method/
+    schema:
+      file: ./schemas/order.graphql
