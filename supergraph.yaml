@@ -60,3 +60,7 @@ subgraphs:
     routing_url: http://localhost:3500/v1.0/invoke/media/method/
     schema:
       file: ./schemas/media.graphql
+  invoice:
+    routing_url: http://localhost:3500/v1.0/invoke/invoice/method/
+    schema:
+      file: ./schemas/invoice.graphql
