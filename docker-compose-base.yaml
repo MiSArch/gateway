@@ -17,7 +17,7 @@ services:
     command: [
       "./daprd",
       "--app-id", "gateway",
-      "--app-port", "8080",
+      "--app-port", "${EXPERIMENT_CONFIG_SIDECAR_PORT:-8080}",
       "--dapr-http-port", "3500",
       "-placement-host-address", "placement:50006",
       "--config", "/config.yaml",
