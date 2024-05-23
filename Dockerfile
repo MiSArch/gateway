@@ -2,7 +2,7 @@ FROM node:21
 ENV NODE_ENV production
 USER node
 WORKDIR /home/node
-RUN curl -sSL https://rover.apollo.dev/nix/v0.22.0 | sh
+RUN curl -sSL https://rover.apollo.dev/nix/v0.23.0 | sh
 ADD . .
 RUN /home/node/.rover/bin/rover supergraph compose --config ./supergraph.yaml --output ./supergraph.graphql --elv2-license accept
 RUN npm ci
