@@ -13,7 +13,7 @@ services:
     environment:
       - FORK=8
       - OTEL_TRACES_EXPORTER=none
-      - OTEL_EXPORTER_OTLP_ENDPOINT="http://otel-collector:4318"
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318
       - OTEL_NODE_RESOURCE_DETECTORS=env,host,os
       - OTEL_SERVICE_NAME=gateway
       - OTEL_SEMCONV_STABILITY_OPT_IN=http
